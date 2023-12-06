@@ -1,6 +1,5 @@
-@import './base.css';
 
-#app {
+#index {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -8,14 +7,11 @@
   font-weight: normal;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+.body-container {
+  background-color: aliceblue;
 }
 
-@media (hover: hover) {
+/* @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
   }
@@ -27,9 +23,9 @@ a,
     place-items: center;
   }
 
-  #app {
+  #index {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
-}
+} */

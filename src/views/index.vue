@@ -1,5 +1,5 @@
 <template>
-    <div class="body-container">
+    <div id="IndexPage" class="body-container">
         <div class="navigation-bar">
             <p>Trafic</p>
             <div v-if="$auth.loggedIn">
@@ -29,3 +29,11 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'IndexPage',
+    auth: false,
+    data() {}
+}
+</script>
