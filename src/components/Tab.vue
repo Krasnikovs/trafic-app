@@ -1,21 +1,27 @@
-<template lang="html">
-    <div v-show="isActive">
-      <slot></slot>
-    </div>
-  </template>
+<template>
+  <div v-show="isActive">
+    <slot></slot>
+  </div>
+</template>
   
-  <script>
-    export default {
-      props: {
-        title: {
-          type: String,
-          default: 'Tab'
-        }
-      },
-      data () {
-        return {
-          isActive: true
-        }
+<script>
+  export default {
+    props: {
+    title: { required: true },
+    selected: { default: false }
+    },
+   data () {
+      return {
+        isActive: false
       }
+    },
+    computed: {
+      href () {
+        return '#' + this.title.toLowerCase().replace(/ /g, '-')
+      }
+    },
+    mounted () {
+      this.isActive = this.selected;
     }
-  </script>
+  }
+</script>

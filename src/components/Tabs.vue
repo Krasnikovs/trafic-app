@@ -1,42 +1,32 @@
 <template>
-    <div>
-        <ul class="tabs_header">
-            <li v-for="(tab, index) in tabs" :key="tab.title" @click="selectTab(index)">
-                {{ tab.title }}
+    <div class="tabs">
+        <ul>
+            <li v-for="tab in tabs" :class="{'is-active': tab.isActive }">
+                <a :href="tab.href" @click="selectTab(tab)">{{ tab.title }}</a>
             </li>
         </ul>
+    </div>
+
+    <div class="tabs-details">
         <slot></slot>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'Tabs',
-        auth: false,
-        props: {
-            mode: {
-                type: String
-            }
-        },
         data () {
             return {
-                selectedIndex: 0,
                 tabs: []
             }
         },
         created () {
             this.tabs = this.$children
         },
-        mounted () {
-            this.selectTab(0)
-        },
 
         methods: {
-            selectTab (i) {
-                this.selectedIndex = i
-
-                this.tabs.array.forEach((tab, index) => {
-                    tab.isActive = (index == i)
+            selectTab (selectedTab) {
+                this.tabs.forEach( tab => {   
+                    tab.isActive = (tab.name == selectedTab.name)
                 })
             }
         }
