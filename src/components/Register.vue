@@ -1,9 +1,9 @@
 <template>
     <div>
-        <input type="text" v-model="auth.username" placeholder="Username">
+        <input type="text" v-model="auth.name" placeholder="Username">
         <input type="email" v-model="auth.email" placeholder="Email">
         <input type="password" v-model="auth.password" placeholder="Password">
-        <input type="password" v-model="password_confirm" placeholder="Password">
+        <input type="password" v-model="auth.password_confirm" placeholder="Password confirm">
         <button @click="register">Register</button>
     </div>
 </template>
@@ -13,18 +13,24 @@ export default {
     name: 'Register',
     data() {
         return {
-            result: {},
             auth: {
-                username: '',
+                name: '',
                 email: '',
                 password: '',
                 password_confirm: ''
             }
         }
     },
+    
     methods: {
-        register() {
-            this.axios.post('localhost:80/api/register', auth)
+        async register() {
+            await this.axios.post('/register', this.auth)
+                .then((res) => {
+                    console.log(res.data.data)
+                })
+                .catch((e) => {
+                    console.log(e.response.data)
+                })
         }
     }
 }
