@@ -3,7 +3,15 @@
         <div class="home-container">
             <div class="side-view">
                 <tabs>
-                    <tab title="All graphs" :selected ="true"><p>a</p></tab>
+                    <tab title="All graphs" :selected ="true">
+                        <div class="stat_table">
+                            <div class="table">
+                                <tr class="stat_tr">
+                                    <th class="stat_th"></th>
+                                </tr>
+                            </div>
+                        </div>
+                    </tab>
                     <tab title="Vehicles"><p>b</p></tab>
                     <tab title="Last 24 hour data"><p>c</p></tab>
                 </tabs>
@@ -22,6 +30,23 @@
         components: {
             Tab,
             Tabs
+        },
+        data () {
+            statistics: []
+        },
+        mounted () {
+            this.getStatistics()
+        },
+        methods: {
+            async getStatistics () {
+                await this.$axios.get('/vehicle_stat').then((res) => {
+                    this.stat = res.data.data
+                    console.log(res)
+                }).catch((e) => {
+                    console.log(e)
+                    alert(e)
+                })
+            }
         }
     }
 </script>

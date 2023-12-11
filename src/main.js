@@ -22,7 +22,7 @@ const router = createRouter({
     history: createWebHistory(),
     routes:[
         { path: '/home', component: HomePage },
-        { path: '/index', component: IndexPage },
+        { path: '/', component: IndexPage },
         { path: '/auth/register', component: Register },
         { path: '/auth/login', component: Login }
     ]
