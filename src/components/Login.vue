@@ -21,7 +21,7 @@ export default {
         async login() {
             await this.axios.post('/login', this.login_user)
                 .then((res) => {
-                    console.log(res.data.access_token)
+                    console.log(res.data.data)
                     localStorage.setItem ('access_token', res.data.access_token)
                     localStorage.getItem('access_token')
                 })

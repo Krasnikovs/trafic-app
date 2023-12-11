@@ -23,6 +23,7 @@
 <script>
     import Tabs from '../components/Tabs.vue'
     import Tab from '../components/Tab.vue'
+    import { Line } from 'vue-chartjs'
 
     export default {
         name: 'HomePage',
@@ -39,9 +40,10 @@
         },
         methods: {
             async getStatistics () {
-                await this.$axios.get('/vehicle_stat').then((res) => {
-                    this.stat = res.data.data
-                    console.log(res)
+                await this.axios.get('/vehicle_stat').then((res) => {
+                    console.log(res.data[1])
+                    this.statistics = res.data.value
+                    
                 }).catch((e) => {
                     console.log(e)
                     alert(e)
