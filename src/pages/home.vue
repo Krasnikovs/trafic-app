@@ -4,13 +4,7 @@
             <div class="side-view">
                 <tabs>
                     <tab title="All graphs" :selected ="true">
-                        <div class="stat_table">
-                            <div class="table">
-                                <tr class="stat_tr">
-                                    <th class="stat_th"></th>
-                                </tr>
-                            </div>
-                        </div>
+                        <VehicleAmount></VehicleAmount>
                     </tab>
                     <tab title="Vehicles"><p>b</p></tab>
                     <tab title="Last 24 hour data"><p>c</p></tab>
@@ -23,33 +17,34 @@
 <script>
     import Tabs from '../components/Tabs.vue'
     import Tab from '../components/Tab.vue'
-    import { Line } from 'vue-chartjs'
+    import VehicleAmount from '../components/AmountChart.vue'
 
     export default {
         name: 'HomePage',
         auth: false,
         components: {
             Tab,
-            Tabs
+            Tabs,
+            VehicleAmount
         },
-        data () {
-            statistics: []
-        },
-        mounted () {
-            this.getStatistics()
-        },
-        methods: {
-            async getStatistics () {
-                await this.axios.get('/vehicle_stat').then((res) => {
-                    console.log(res.data[1])
-                    this.statistics = res.data.value
+        // data () {
+        //     statistics: []
+        // },
+        // mounted () {
+        //     this.getStatistics()
+        // },
+        // methods: {
+        //     async getStatistics () {
+        //         await this.axios.get('/vehicle_stat').then((res) => {
+        //             console.log(res.data[1])
+        //             this.statistics = res.data.value
                     
-                }).catch((e) => {
-                    console.log(e)
-                    alert(e)
-                })
-            }
-        }
+        //         }).catch((e) => {
+        //             console.log(e)
+        //             alert(e)
+        //         })
+        //     }
+        // }
     }
 </script>
 
