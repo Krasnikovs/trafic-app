@@ -1,5 +1,6 @@
 <template>
     <Line
+        v-if="loaded"
         id="amountChart"
         :options="amountOptions"
         :data="amountData"
@@ -17,14 +18,14 @@
         components: { Line },
 
         data () {
-            const statistics = [12, 54, 32]
+            
             return {
+                loaded: false,
                 amountData: {
-                    labels: [''] ,
+                    labels: null,
                     datasets: [ {
-                        labels: 'Vehicle amount in specific time slot',
-                        data: statistics,
-                        fill: false
+                        label: 'Vehicle amount in specific time slot',
+                        data: null
                     } ]
                 },
                 amountOptions: {
@@ -35,15 +36,17 @@
             
         },
         mounted () {
+            console.log(this.amountData.labels)
             this.getStatistics()
+            console.log(this.amountData.labels)
         },
         methods: {
             async getStatistics () {
                 await this.axios.get('/vehicle_stat').then((res) => {
-                    console.log(res.data[1])
-                    this.statistics = res.data[1]
-                    this.labels = res.data[0]
-                    console.log(this.labels)
+                    this.amountData.datasets[0].data = res.data[1]
+                    this.amountData.labels = res.data[0]
+                    this.loaded = true
+                    console.log(res.data)
                 }).catch((e) => {
                     console.log(e)
                     alert(e)
