@@ -1,14 +1,14 @@
 
 #index {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 40px;
-
+  margin: 0;
   font-weight: normal;
+  width: 100%;
 }
 
 .body-container {
-  background-color: rgb(255, 255, 255);
+  /* background-color: #dad7d0; */
+  width: 100%;
+  margin-top: 3%;
 }
 
 /* @media (hover: hover) {
@@ -16,7 +16,8 @@
     background-color: hsla(160, 100%, 37%, 0.2);
   }
 }
-
+    background-color: #90c229;
+    border-color: #6d9f06;
 @media (min-width: 1024px) {
   body {
     display: flex;

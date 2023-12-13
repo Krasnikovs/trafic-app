@@ -1,14 +1,13 @@
 <template>
     <div id="IndexPage" class="body-container">
-        <div class="navigation-bar">
-            <p>Trafic</p>
+        <div>
             <!-- <div v-if="$auth.loggedIn" >
-                <Transition to="/home">Go to profile</Transition>
+                <AuthNavigationBar/>
             </div>
             <div v-else>
-                <router-link to="/auth/register">Register</router-link>
-                <router-link to="/auth/login">Login</router-link>
+                <GuestNavigationBar/>
             </div> -->
+            <GuestNavigationBar/>
         </div>
         <div class="body">
             <div class="body-texts">
@@ -31,9 +30,22 @@
 </template>
 
 <script>
-export default {
-    name: 'IndexPage',
-    auth: false,
-    data() {}
-}
+    import AuthNavigationBar from '../layouts/AuthNavigationBar.vue'
+    import GuestNavigationBar from '../layouts/GuestNavigationBar.vue'
+
+    export default {
+        name: 'IndexPage',
+        auth: false,
+        components: {
+            AuthNavigationBar,
+            GuestNavigationBar
+        }
+    }
 </script>
+
+<style>
+.body-buttons {
+    display: flex;
+    gap: 10px;
+}
+</style>
