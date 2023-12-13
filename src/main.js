@@ -8,6 +8,8 @@ import Register from './pages/Register.vue'
 import Login from './pages/Login.vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import 'bootstrap'
+import "bootstrap/dist/css/bootstrap.min.css"
 
 import App from './App.vue'
 
