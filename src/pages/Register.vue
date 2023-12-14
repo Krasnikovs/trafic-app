@@ -1,11 +1,4 @@
 <template>
-    <!-- <div>
-        <input type="text" v-model="auth.name" placeholder="Username">
-        <input type="email" v-model="auth.email" placeholder="Email">
-        <input type="password" v-model="auth.password" placeholder="Password">
-        <input type="password" v-model="auth.password_confirm" placeholder="Password confirm">
-        <button @click="register">Register</button>
-    </div> -->
     <main class="ms-2 me-2">
         <div class="card p-3 form m-auto h-100" style="width: 25rem;">
             <div class="mb-3">

@@ -1,10 +1,12 @@
 <template>
-    <Line
-        v-if="loaded"
-        id="amountChart"
-        :options="amountOptions"
-        :data="amountData"
-    />
+    <div class="w-50 h-50 mt-5">
+        <Line
+            v-if="loaded"
+            id="amountChart"
+            :options="amountOptions"
+            :data="amountData"
+        />
+    </div>
 </template>
 
 <script>
@@ -29,7 +31,7 @@
                     } ]
                 },
                 amountOptions: {
-                    responsive: false,
+                    responsive: true,
                     LinearScale: 0
                 }
             }

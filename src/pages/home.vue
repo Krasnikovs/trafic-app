@@ -7,10 +7,9 @@
             <div v-else>
                 <GuestNavigationBar/>
             </div> -->
-            <GuestNavigationBar/>
-        </div>
-        <div class="home-container">
             <HomeSideBar/>
+        </div>
+        <div id="home-container" class="d-flex justify-content-center">
             <VehicleAmount/>
         </div>
     </div>
@@ -35,8 +34,7 @@
 </script>
 
 <style>
-    .home-container {
-        display: block;
-        
-    }
+/* #home-container {
+    min-height: 200vh;
+} */
 </style>
