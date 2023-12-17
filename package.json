@@ -16,9 +16,5 @@
     "vue-axios": "^3.5.2",
     "vue-chartjs": "^5.2.0",
     "vue-router": "^4.2.5"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^4.4.0",
-    "vite": "^4.4.11"
   }
 }

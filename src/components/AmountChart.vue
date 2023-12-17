@@ -1,5 +1,5 @@
 <template>
-    <div class="w-50 h-50 mt-5">
+    <div class="w-50 h-75" style="margin-top: 50px;">
         <Line
             v-if="loaded"
             id="amountChart"

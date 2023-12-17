@@ -9,9 +9,9 @@
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <input v-model="login_user.password" type="password" class="form-control" id="exampleInputPassword1">
             </div>
-            <button type="submit" class="btn btn-primary" @click="login">Submit</button>
+            <button type="submit" class="btn btn-primary" style="background-color: #6d9f06; border-color: #6d9f06;" @click="login">Submit</button>
         </div>
-    </main> 
+    </main>
 </template>
 
 <script>
@@ -30,8 +30,9 @@ export default {
             await this.axios.post('/login', this.login_user)
                 .then((res) => {
                     console.log(res.data.access_token)
-                    localStorage.setItem ('access_token', res.data.access_token)
+                    localStorage.setItem('access_token', res.data.access_token)
                     localStorage.getItem('access_token')
+                    this.$router.push('/')
                 })
                 .catch((e) => {
                     console.log(e)

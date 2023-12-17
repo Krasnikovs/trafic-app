@@ -17,7 +17,7 @@
                 <label for="InputPassword2" class="form-label">Password Confirmation</label>
                 <input v-model="auth.password_confirm" type="password" class="form-control" id="InputPassword2">
             </div>
-            <button type="submit" class="btn btn-primary" @click="register">Submit</button>
+            <button type="submit" class="btn btn-primary" style="background-color: #6d9f06; border-color: #6d9f06;" @click="register">Submit</button>
         </div>
     </main> 
 </template>
@@ -41,6 +41,7 @@ export default {
             await this.axios.post('/register', this.auth)
                 .then((res) => {
                     console.log(res.data.data)
+                    this.$router.push('/login')
                 })
                 .catch((e) => {
                     console.log(e.response.data)

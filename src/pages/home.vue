@@ -9,8 +9,10 @@
             </div> -->
             <HomeSideBar/>
         </div>
-        <div id="home-container" class="d-flex justify-content-center">
+        <div id="home-container" class="d-flex justify-content-center align-items-center flex-column gap-5" style="margin-top: 100px;">
             <VehicleAmount/>
+            <TimeSpent/>
+            <VehicleTable/>
         </div>
     </div>
 </template>
@@ -20,6 +22,8 @@
     import GuestNavigationBar from '../layouts/GuestNavigationBar.vue'
     import HomeSideBar from '../layouts/HomeSideBar.vue'
     import VehicleAmount from '../components/AmountChart.vue'
+    import VehicleTable from '../components/VehicleTable.vue'
+    import TimeSpent from '../components/TimeSpent.vue'
 
     export default {
         name: 'HomePage',
@@ -28,7 +32,9 @@
             HomeSideBar,
             VehicleAmount,
             AuthNavigationBar,
-            GuestNavigationBar
+            GuestNavigationBar,
+            VehicleTable,
+            TimeSpent
         }
     }
 </script>
