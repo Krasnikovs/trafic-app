@@ -1,5 +1,5 @@
 <template>
-    <div class="w-50 h-50 mt-5 ">
+    <div id="timeSpent" class="w-50 h-50 mt-5 ">
         <div class="d-flex justify-content-end">
             <button v-if="is_logged_in" @click="downloadTimeSpent()" class="btn" style="color: #6d9f06; border-color: #6d9f06;" type="button">Download</button>
         </div>

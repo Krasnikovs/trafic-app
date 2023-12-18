@@ -25,6 +25,7 @@
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
                             <button class="nav-link active" data-bs-dismiss="offcanvas" aria-current="page" @click="toAmountGraph">Vehicle Amount in time slot</button>
+                            <button class="nav-link active" data-bs-dismiss="offcanvas" aria-current="page" @click="toTimeSpent">Time spent on the road</button>
                             <button class="nav-link active" data-bs-dismiss="offcanvas" aria-current="page" @click="toVehicleTable">Vehicle table</button>
                         </li>
                     </ul>
@@ -81,6 +82,9 @@
             },
             async toVehicleTable () {
                 document.getElementById('vehicleTable').scrollIntoView({ behavior: "smooth"});
+            },
+            async toTimeSpent () {
+                document.getElementById('timeSpent').scrollIntoView({ behavior: "smooth"});
             },
         }
     }
